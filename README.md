@@ -48,7 +48,7 @@ projeto_ans/
 ├── tests/                     # Testes Pytest
 ├── requirements.txt           # Dependências
 ├── .env.example               # Template de variáveis
-└── executar_projeto.py        # Orchestrador principal
+└── executar_projeto.py        # Orquestrador principal
 ```
 
 ## ⚙️ Pré-requisitos
@@ -62,8 +62,8 @@ projeto_ans/
 
 ### 1. Clonar Repositório
 ```bash
-git clone https://github.com/vitfreire/projeto__ANS.git
-cd projeto__ANS
+git clone https://github.com/vitfreire/Projeto_ANS.git
+cd Projeto_ANS
 ```
 
 ### 2. Ambiente Virtual
