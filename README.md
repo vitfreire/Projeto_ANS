@@ -81,7 +81,7 @@ cd Projeto_ANS
 
 ```bash
 python -m venv venv
-
+### 2.1 Ativar ambiente Virtual
 # Windows
 venv\Scripts\activate
 
