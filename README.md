@@ -1,13 +1,4 @@
-Perfeito! Abaixo está o `README.md` **atualizado e formatado** com:
 
-1. ✅ Explicações organizadas e orientadas à execução.
-2. ✅ Separação entre criação e ativação de ambiente virtual.
-3. ✅ Estrutura completa do projeto com base nos diretórios e arquivos que você listou.
-4. ✅ Indicação clara da dependência do Node.js e `node_modules` dentro de `frontend-operadoras`.
-
----
-
-```markdown
 # 📊 Projeto ANS - Sistema de Gestão de Dados de Saúde Suplementar
 
 **Visão Geral**  
