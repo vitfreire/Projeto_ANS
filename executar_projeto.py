@@ -14,16 +14,16 @@ logging.basicConfig(level=logging.INFO,
 def executar_etapas(etapas, use_shell):
     # Configura PYTHONPATH para a raiz do projeto
     env = os.environ.copy()
-    env["PYTHONPATH"] = str(Path(_file_).resolve().parent)
+    env["PYTHONPATH"] = str(Path(__file__).resolve().parent)
     for descricao, script in etapas:
         logging.info(f"Executando etapa: {descricao}")
         try:
-            subprocess.run(["python", script], check=True, shell=use_shell, env=env)
+            subprocess.run(["python", script], check=True,
+                           shell=use_shell, env=env)
             logging.info(f"Etapa '{descricao}' concluída com sucesso.")
         except subprocess.CalledProcessError as e:
             logging.error(f"Erro na etapa '{descricao}': {e}")
             raise
-
 
 
 def aguardar_arquivo(csv_path, timeout=15):
@@ -129,5 +129,5 @@ def main():
     api_thread.start()
 
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     main()
