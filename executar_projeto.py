@@ -6,6 +6,7 @@ import time
 import logging
 from pathlib import Path
 
+
 # Configuração do logging
 logging.basicConfig(level=logging.INFO,
                     format='[%(asctime)s] %(levelname)s - %(message)s')
@@ -96,6 +97,8 @@ def main():
     use_shell = True if platform.system() == "Windows" else False
 
     etapas = [
+        ("Realizar web scraping ANS", "scripts/scraping/web_scraping_ans.py"),
+        ("Extrair tabela do PDF", "scripts/transformacao/extrai_tabela_pdf.py"),
         ("Criar banco e tabelas", "scripts/carga_banco/cria_banco_ans.py"),
         ("Carregar e tratar dados das operadoras ativas",
          "scripts/carga_banco/carrega_operadoras_ativas.py"),
@@ -105,6 +108,7 @@ def main():
          "scripts/carga_banco/carrega_demonst_contabeis.py"),
         ("Importar demonstrações contabeis no banco",
          "scripts/transformacao/importa_dados_contabeis.py")
+
     ]
 
     try:
