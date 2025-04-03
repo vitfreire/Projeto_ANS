@@ -12,19 +12,18 @@ logging.basicConfig(level=logging.INFO,
 
 
 def executar_etapas(etapas, use_shell):
-    # Se o sistema for Windows, configura PYTHONPATH para a raiz do projeto
+    # Configura PYTHONPATH para a raiz do projeto
     env = os.environ.copy()
-    if platform.system() == "Windows":
-        env["PYTHONPATH"] = str(Path(__file__).resolve().parent)
+    env["PYTHONPATH"] = str(Path(_file_).resolve().parent)
     for descricao, script in etapas:
         logging.info(f"Executando etapa: {descricao}")
         try:
-            subprocess.run(["python", script], check=True,
-                           shell=use_shell, env=env)
+            subprocess.run(["python", script], check=True, shell=use_shell, env=env)
             logging.info(f"Etapa '{descricao}' concluída com sucesso.")
         except subprocess.CalledProcessError as e:
             logging.error(f"Erro na etapa '{descricao}': {e}")
             raise
+
 
 
 def aguardar_arquivo(csv_path, timeout=15):
@@ -125,10 +124,10 @@ def main():
     api_thread = threading.Thread(target=iniciar_api, args=(use_shell,))
 
     frontend_thread.start()
-    # Pequena pausa para iniciar o frontend antes da API
+    # Pausa para iniciar o frontend antes da API
     time.sleep(2)
     api_thread.start()
 
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     main()
