@@ -237,6 +237,3 @@ Analista de Sistemas
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?logo=github)](https://github.com/vitfreire)
 ```
 
----
-
-Se quiser, posso salvar esse conteúdo diretamente como um novo `README.md` ou gerar um `.md` para colar em outro editor. Deseja isso agora?
