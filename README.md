@@ -1,4 +1,13 @@
+Perfeito! Abaixo está o `README.md` **atualizado e formatado** com:
 
+1. ✅ Explicações organizadas e orientadas à execução.
+2. ✅ Separação entre criação e ativação de ambiente virtual.
+3. ✅ Estrutura completa do projeto com base nos diretórios e arquivos que você listou.
+4. ✅ Indicação clara da dependência do Node.js e `node_modules` dentro de `frontend-operadoras`.
+
+---
+
+```markdown
 # 📊 Projeto ANS - Sistema de Gestão de Dados de Saúde Suplementar
 
 **Visão Geral**  
@@ -33,94 +42,135 @@ Sistema completo para coleta, transformação, armazenamento e disponibilizaçã
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Estrutura Completa do Projeto
 
 ```text
 projeto_ans/
-├── api/                       # API Flask + Frontend Vue.js
-│   ├── app.py                 # Configuração da API
-│   └── frontend/              # Frontend Vue.js
-│       └── node_modules/      # Pacotes do frontend (necessário)
-├── dados/                     # Dados tratados (CSV)
-├── downloads/                 # Arquivos brutos (PDF/CSV)
+├── .env                      # Arquivo de variáveis (NÃO versionar)
+├── .pytest_cache/            # Cache de testes Pytest
+│   └── v/
+├── api/
+│   ├── __pycache__/
+│   ├── .pytest_cache/
+│   ├── __init__.py
+│   ├── db.py
+│   ├── main.py
+│   ├── package-lock.json
+│   └── frontend-operadoras/  # Frontend Vue.js
+│       └── node_modules/
+├── dados/
+│   ├── __init__.py
+│   ├── dados_contabeis.csv
+│   ├── cadop/
+│   ├── csvs/
+│   └── zips/
+├── downloads/
+│   ├── Anexo1.pdf
+│   ├── Anexo2.pdf
+│   ├── rol_procedimentos.csv
+│   ├── anexos_ans.zip
+│   └── Teste_Vitória_Freire.zip
+├── postman/
+│   ├── __init__.py
+│   └── postman_collection_operadoras.json
 ├── scripts/
-│   ├── scraping.py            # Coleta de dados
-│   ├── transformacao.py       # Processamento ETL
-│   └── carga.py               # Inserção no MySQL
+│   ├── __init__.py
+│   ├── __pycache__/
+│   ├── carga_banco/
+│   ├── scraping/
+│   ├── transformacao/
+│   └── utilitarios/
 ├── sql/
-│   ├── ddl.sql                # Schema do banco
-│   └── queries_analiticas.sql # Consultas complexas
-├── tests/                     # Testes Pytest
-├── requirements.txt           # Dependências Python
-├── .env.example               # Template de variáveis
-└── executar_projeto.py        # Orquestrador principal
+│   ├── __init__.py
+│   ├── analise/
+│   ├── ddl/
+│   └── queries_analise.sql
+├── tests/
+│   ├── __init__.py
+│   ├── __pycache__/
+│   ├── test_csvs.py
+│   └── test_db.py
+├── venv/                     # Ambiente virtual (NÃO versionar)
+│   ├── bin/
+│   ├── include/
+│   ├── lib/
+│   ├── pyvenv.cfg
+│   └── .gitignore
+├── executar_projeto.py       # Script principal
+├── package-lock.json
+├── package.json
+├── requirements.txt
 ```
 
 ---
 
 ## ⚙️ Pré-requisitos
 
-- **Python** 3.10+
-- **MySQL** 8.0+
-- **Node.js** 16+  
-  > Necessário para instalar dependências do frontend (`node_modules/` dentro de `api/frontend/`)
+- Python 3.10+
+- MySQL 8.0+
+- Node.js 16+  
+  > Necessário para instalar dependências do frontend (`node_modules/` dentro de `api/frontend-operadoras/`)
 - Git
 
 ---
 
 ## 🛠️ Instalação & Execução
 
-### 1. Clonar Repositório
+### 1. Clonar o Repositório
 
 ```bash
 git clone https://github.com/vitfreire/Projeto_ANS.git
 cd Projeto_ANS
 ```
 
-### 2. Criar Ambiente Virtual Python
+### 2. Criar o Ambiente Virtual
 
 ```bash
 python -m venv venv
-### 2.1 Ativar ambiente Virtual
-# Windows
+```
+
+### 3. Ativar o Ambiente Virtual
+
+```bash
+# Windows:
 venv\Scripts\activate
 
-# Linux/macOS
+# Linux/macOS:
 source venv/bin/activate
 ```
 
-### 3. Instalar Dependências Python
+### 4. Instalar Dependências do Backend
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Instalar Dependências do Frontend
+### 5. Instalar Dependências do Frontend
 
 ```bash
-cd api/frontend/
+cd api/frontend-operadoras/
 npm install
 cd ../../
 ```
 
-> ⚠️ A pasta `node_modules/` será criada automaticamente dentro de `api/frontend/` e **deve ser mantida para o projeto funcionar localmente.**
+> ⚠️ A pasta `node_modules/` será criada automaticamente dentro de `api/frontend-operadoras/` e **deve ser mantida para o frontend funcionar localmente.**
 
 ---
 
-### 5. Configurar Banco de Dados
+### 6. Configurar Banco de Dados
 
 Crie um arquivo `.env` com base em `.env.example`:
 
 ```env
 MYSQL_HOST=localhost
 MYSQL_USER=root
-MYSQL_PASSWORD=sua_senha
+MYSQL_PASSWORD='sua_senha_do_Mysql'
 MYSQL_DATABASE=ans_dados
 ```
 
 ---
 
-### 6. Executar Pipeline Completo
+### 7. Executar o Pipeline Completo
 
 ```bash
 python executar_projeto.py
@@ -177,8 +227,9 @@ O sistema ignora automaticamente:
 
 - Credenciais (`.env`)
 - Dados gerados (`*.csv`, `*.pdf`, `downloads/`, `dados/`)
-- Artefatos de desenvolvimento (`__pycache__/`, `node_modules/`)
-- Arquivos de build e caches
+- Ambientes virtuais (`venv/`)
+- Caches de testes (`.pytest_cache/`, `__pycache__/`)
+- Pacotes do frontend (`node_modules/`)
 
 ---
 
@@ -197,4 +248,4 @@ Analista de Sistemas
 
 ---
 
-Se quiser, posso gerar esse README como arquivo `.md` para você substituir no repositório ou já aplicar no seu projeto atual. Deseja isso?
+Se quiser, posso salvar esse conteúdo diretamente como um novo `README.md` ou gerar um `.md` para colar em outro editor. Deseja isso agora?
