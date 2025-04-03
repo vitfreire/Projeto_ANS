@@ -119,7 +119,7 @@ Acesse: `http://localhost:5173`
 
 | Categoria       | Tecnologias                                  |
 |-----------------|---------------------------------------------|
-| **Backend**     | Python, Flask, MySQL Connector              |
+| **Backend**     | Python, Flask, MySQL                       |
 | **Data Processing** | Pandas, Tabula-py, BeautifulSoup       |
 | **Frontend**    | Vue.js 3, Vite, Axios                       |
 | **DevOps**      | Git, pytest, dotenv                        |
