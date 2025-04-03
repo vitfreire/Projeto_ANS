@@ -1,0 +1,22 @@
+# Ambiente virtual
+venv/
+
+# Arquivo de variáveis de ambiente
+.env
+
+# Cache do Python
+__pycache__/
+*.pyc
+__init__.py
+
+# Cache do Pytest
+.pytest_cache/
+pyvenv.cfg
+
+# Ignorar todos os arquivos CSV do projeto
+*.csv
+zips/dados_contabeis.csv
+*.pdf
+*.zip 
+DS.Store
+
